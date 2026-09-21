@@ -1,0 +1,6 @@
+{
+  "name": "Sri Vishnu View Hotel",
+  "description": "Stay at Sri Vishnu View Hotel in Chand Chaura, Gaya, Bihar. Discover comfortable hospitality, elegant surroundings and a convenient location for your Gaya visit.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

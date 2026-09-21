@@ -1,0 +1,92 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --pearl: #F7F3EA;
+    --espresso: #211C18;
+    --walnut: #5A4030;
+    --gold: #C9A86A;
+    --gold-light: #DFC493;
+    --gold-dark: #A58245;
+    --sandstone: #D8C9B4;
+    --taupe: #8B7B6B;
+  }
+
+  body {
+    background-color: #F7F3EA;
+    color: #211C18;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, .font-serif-luxury {
+    font-family: 'Playfair Display', 'Cormorant Garamond', Georgia, serif;
+  }
+
+  .font-cormorant {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+  }
+
+  button, .font-btn {
+    font-family: 'Poppins', 'Inter', sans-serif;
+  }
+}
+
+/* Subtle Film Grain Texture Overlay */
+.luxury-grain {
+  background-image: radial-gradient(rgba(33, 28, 24, 0.04) 1px, transparent 0);
+  background-size: 24px 24px;
+}
+
+.luxury-dark-grain {
+  background-image: radial-gradient(rgba(201, 168, 106, 0.08) 1px, transparent 0);
+  background-size: 24px 24px;
+}
+
+/* Architectural Fine Lines */
+.arch-border-gold {
+  border-color: rgba(201, 168, 106, 0.35);
+}
+
+.arch-border-subtle {
+  border-color: rgba(90, 64, 48, 0.15);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 7px;
+}
+
+::-webkit-scrollbar-track {
+  background: #F7F3EA;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #D8C9B4;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #C9A86A;
+}
+
+/* Keyframes for subtle animations */
+@keyframes slowZoom {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+.animate-slow-zoom {
+  animation: slowZoom 24s ease-in-out infinite;
+}
+
+@keyframes floatGentle {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+
+.animate-float-gentle {
+  animation: floatGentle 4s ease-in-out infinite;
+}
+
