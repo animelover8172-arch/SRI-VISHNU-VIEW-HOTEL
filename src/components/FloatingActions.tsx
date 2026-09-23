@@ -14,7 +14,7 @@ export default function FloatingActions({ onOpenBooking }: FloatingActionsProps)
     const handleScroll = () => {
       const winScroll = document.documentElement.scrollTop;
       const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-      const scrolled = (winScroll / height) * 100;
+      const scrolled = height > 0 ? (winScroll / height) * 100 : 0;
       setScrollProgress(scrolled);
 
       if (winScroll > 300) {
@@ -41,7 +41,7 @@ export default function FloatingActions({ onOpenBooking }: FloatingActionsProps)
       {/* Scroll Progress Bar at very top */}
       <div className="fixed top-0 left-0 right-0 h-[2px] z-50 pointer-events-none">
         <div
-          className="h-full bg-gradient-to-r from-[#C9A86A] via-[#DFC493] to-[#C9A86A] transition-all duration-150"
+          className="h-full bg-gradient-to-r from-[#D4AF37] via-[#E1BE4A] to-[#D4AF37] transition-all duration-150"
           style={{ width: `${scrollProgress}%` }}
         />
       </div>
@@ -52,7 +52,7 @@ export default function FloatingActions({ onOpenBooking }: FloatingActionsProps)
           <button
             onClick={scrollToTop}
             id="back-to-top-floating"
-            className="w-10 h-10 rounded-full bg-[#211C18]/90 border border-[#C9A86A]/40 text-[#C9A86A] hover:text-[#211C18] hover:bg-[#C9A86A] transition-all duration-300 flex items-center justify-center shadow-lg"
+            className="w-10 h-10 rounded-full bg-[#0D0D0B]/90 border border-[#D4AF37]/35 text-[#D4AF37] hover:text-[#080807] hover:bg-[#D4AF37] transition-all duration-300 flex items-center justify-center shadow-2xl cursor-pointer"
             aria-label="Scroll to top of page"
           >
             <ArrowUp className="w-4 h-4" />
@@ -67,26 +67,26 @@ export default function FloatingActions({ onOpenBooking }: FloatingActionsProps)
           className="group relative flex items-center bg-[#25D366] text-white px-4 py-3 rounded-full shadow-2xl hover:bg-[#20ba59] transition-all duration-300 active:scale-95"
           aria-label="Chat with hotel reception on WhatsApp"
         >
-          <span className="max-w-0 overflow-hidden whitespace-nowrap group-hover:max-w-xs transition-all duration-300 ease-in-out text-xs font-semibold tracking-wider uppercase pr-0 group-hover:pr-2">
-            WhatsApp Front Desk
+          <span className="max-w-0 overflow-hidden whitespace-nowrap group-hover:max-w-xs transition-all duration-300 ease-in-out text-xs font-bold tracking-wider uppercase pr-0 group-hover:pr-2">
+            WhatsApp Desk
           </span>
           <MessageCircle className="w-5 h-5 shrink-0" />
           
           {/* Subtle Online Dot */}
-          <span className="absolute -top-1 -right-1 w-3 h-3 rounded-full bg-[#C9A86A] border-2 border-[#211C18] animate-pulse" />
+          <span className="absolute -top-1 -right-1 w-3 h-3 rounded-full bg-[#D4AF37] border-2 border-[#080807] animate-pulse" />
         </a>
       </div>
 
-      {/* Mobile Sticky Bottom Action Bar */}
+      {/* Mobile Sticky Bottom Action Bar (Dark Luxury Glass) */}
       <div
         id="mobile-sticky-bar"
-        className="fixed bottom-0 left-0 right-0 z-40 bg-[#211C18]/95 backdrop-blur-md border-t border-[#C9A86A]/30 p-2.5 sm:hidden flex items-center justify-between gap-2 shadow-2xl"
+        className="fixed bottom-0 left-0 right-0 z-40 bg-[#080807]/95 backdrop-blur-xl border-t border-[#D4AF37]/25 p-2.5 sm:hidden flex items-center justify-between gap-2 shadow-2xl"
       >
         <a
           href={HOTEL_INFO.phoneTel}
-          className="flex-1 flex items-center justify-center space-x-1.5 bg-[#2B231D] text-[#F7F3EA] border border-[#5A4030] py-2.5 rounded-sm text-xs font-medium tracking-wider uppercase"
+          className="flex-1 flex items-center justify-center space-x-1.5 bg-[#12110F] text-[#F7F3EA] border border-[#D4AF37]/25 py-2.5 rounded-full text-xs font-semibold tracking-wider uppercase"
         >
-          <Phone className="w-3.5 h-3.5 text-[#C9A86A]" />
+          <Phone className="w-3.5 h-3.5 text-[#D4AF37]" />
           <span>Call</span>
         </a>
 
@@ -94,7 +94,7 @@ export default function FloatingActions({ onOpenBooking }: FloatingActionsProps)
           href={whatsappUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className="flex-1 flex items-center justify-center space-x-1.5 bg-[#25D366]/20 border border-[#25D366]/50 text-[#F7F3EA] py-2.5 rounded-sm text-xs font-medium tracking-wider uppercase"
+          className="flex-1 flex items-center justify-center space-x-1.5 bg-[#25D366]/20 border border-[#25D366]/50 text-[#F7F3EA] py-2.5 rounded-full text-xs font-semibold tracking-wider uppercase"
         >
           <MessageCircle className="w-3.5 h-3.5 text-[#25D366]" />
           <span>WhatsApp</span>
@@ -102,7 +102,7 @@ export default function FloatingActions({ onOpenBooking }: FloatingActionsProps)
 
         <button
           onClick={onOpenBooking}
-          className="flex-[1.4] flex items-center justify-center space-x-1.5 bg-[#C9A86A] text-[#211C18] py-2.5 rounded-sm text-xs font-semibold tracking-wider uppercase"
+          className="flex-[1.4] flex items-center justify-center space-x-1.5 bg-[#D4AF37] text-[#080807] py-2.5 rounded-full text-xs font-bold tracking-wider uppercase shadow-md shadow-[#D4AF37]/20 cursor-pointer"
         >
           <Calendar className="w-3.5 h-3.5" />
           <span>Book Stay</span>

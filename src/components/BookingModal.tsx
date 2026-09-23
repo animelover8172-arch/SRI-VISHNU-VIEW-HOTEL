@@ -49,34 +49,34 @@ Please share room availability and best direct tariff. Thank you!`;
   return (
     <div
       id="booking-modal-overlay"
-      className="fixed inset-0 z-50 bg-[#211C18]/90 backdrop-blur-md flex items-center justify-center p-4 sm:p-6 overflow-y-auto animate-fade-in"
+      className="fixed inset-0 z-50 bg-[#080807]/90 backdrop-blur-xl flex items-center justify-center p-4 sm:p-6 overflow-y-auto animate-fade-in"
       onClick={onClose}
     >
       <div
         id="booking-modal-container"
-        className="bg-[#261F1A] border border-[#C9A86A]/40 rounded-sm text-[#F7F3EA] w-full max-w-xl p-6 sm:p-8 shadow-2xl relative my-8"
+        className="bg-[#0D0D0B] border border-[#D4AF37]/35 rounded-sm text-[#F7F3EA] w-full max-w-xl p-6 sm:p-8 shadow-2xl relative my-8"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Top Gold Accent */}
-        <div className="absolute top-0 left-0 right-0 h-[2.5px] bg-gradient-to-r from-[#C9A86A] via-[#DFC493] to-[#C9A86A]" />
+        <div className="absolute top-0 left-0 right-0 h-[2.5px] bg-gradient-to-r from-[#D4AF37] via-[#E1BE4A] to-[#D4AF37]" />
 
         {/* Header */}
-        <div className="flex items-start justify-between pb-4 border-b border-[#5A4030]/50 mb-6">
+        <div className="flex items-start justify-between pb-4 border-b border-[#D4AF37]/20 mb-6">
           <div>
-            <span className="text-[10px] uppercase tracking-[0.25em] text-[#C9A86A] block font-semibold">
+            <span className="text-[10px] uppercase tracking-[0.26em] text-[#D4AF37] block font-semibold">
               SRI VISHNU VIEW HOTEL &bull; GAYA
             </span>
-            <h3 className="font-serif text-2xl text-[#F7F3EA] mt-1 font-normal">
+            <h3 className="font-cinzel text-2xl text-[#F7F3EA] mt-1 font-normal">
               Direct Reservation Concierge
             </h3>
-            <p className="text-xs text-[#8B7B6B] mt-0.5">
+            <p className="text-xs text-[#A7A49C] mt-0.5 font-sans font-light">
               Connect directly with our front desk in Chand Chaura
             </p>
           </div>
 
           <button
             onClick={onClose}
-            className="p-1.5 text-[#8B7B6B] hover:text-[#C9A86A] transition-colors rounded-sm hover:bg-white/5"
+            className="p-1.5 text-[#A7A49C] hover:text-[#D4AF37] transition-colors rounded-sm hover:bg-white/5 cursor-pointer"
             aria-label="Close booking modal"
           >
             <X className="w-5 h-5" />
@@ -88,7 +88,7 @@ Please share room availability and best direct tariff. Thank you!`;
           
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div>
-              <label className="block text-[11px] uppercase tracking-wider text-[#C9A86A] mb-1 font-medium flex items-center space-x-1">
+              <label className="block text-[11px] uppercase tracking-wider text-[#D4AF37] mb-1 font-semibold flex items-center space-x-1">
                 <User className="w-3.5 h-3.5" />
                 <span>Full Name</span>
               </label>
@@ -98,12 +98,12 @@ Please share room availability and best direct tariff. Thank you!`;
                 placeholder="Your Name"
                 value={guestName}
                 onChange={(e) => setGuestName(e.target.value)}
-                className="w-full bg-[#1E1815] border border-[#5A4030] focus:border-[#C9A86A] text-[#F7F3EA] px-3.5 py-2.5 text-xs rounded-sm focus:outline-none"
+                className="w-full bg-[#12110F] border border-[#D4AF37]/25 focus:border-[#D4AF37] text-[#F7F3EA] px-3.5 py-2.5 text-xs rounded-sm focus:outline-none placeholder-[#A7A49C]/50"
               />
             </div>
 
             <div>
-              <label className="block text-[11px] uppercase tracking-wider text-[#C9A86A] mb-1 font-medium flex items-center space-x-1">
+              <label className="block text-[11px] uppercase tracking-wider text-[#D4AF37] mb-1 font-semibold flex items-center space-x-1">
                 <Phone className="w-3.5 h-3.5" />
                 <span>Phone / Mobile</span>
               </label>
@@ -113,19 +113,19 @@ Please share room availability and best direct tariff. Thank you!`;
                 placeholder="e.g., 070915 90500"
                 value={phone}
                 onChange={(e) => setPhone(e.target.value)}
-                className="w-full bg-[#1E1815] border border-[#5A4030] focus:border-[#C9A86A] text-[#F7F3EA] px-3.5 py-2.5 text-xs rounded-sm focus:outline-none"
+                className="w-full bg-[#12110F] border border-[#D4AF37]/25 focus:border-[#D4AF37] text-[#F7F3EA] px-3.5 py-2.5 text-xs rounded-sm focus:outline-none placeholder-[#A7A49C]/50"
               />
             </div>
           </div>
 
           <div>
-            <label className="block text-[11px] uppercase tracking-wider text-[#C9A86A] mb-1 font-medium">
+            <label className="block text-[11px] uppercase tracking-wider text-[#D4AF37] mb-1 font-semibold">
               Selected Room Category
             </label>
             <select
               value={roomType}
               onChange={(e) => setRoomType(e.target.value)}
-              className="w-full bg-[#1E1815] border border-[#5A4030] focus:border-[#C9A86A] text-[#F7F3EA] px-3.5 py-2.5 text-xs rounded-sm focus:outline-none cursor-pointer"
+              className="w-full bg-[#12110F] border border-[#D4AF37]/25 focus:border-[#D4AF37] text-[#F7F3EA] px-3.5 py-2.5 text-xs rounded-sm focus:outline-none cursor-pointer"
             >
               {ROOMS_DATA.map((r) => (
                 <option key={r.id} value={r.name}>
@@ -137,7 +137,7 @@ Please share room availability and best direct tariff. Thank you!`;
 
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
             <div>
-              <label className="block text-[10px] uppercase tracking-wider text-[#C9A86A] mb-1 font-medium flex items-center space-x-1">
+              <label className="block text-[10px] uppercase tracking-wider text-[#D4AF37] mb-1 font-semibold flex items-center space-x-1">
                 <Calendar className="w-3 h-3" />
                 <span>Check-in</span>
               </label>
@@ -145,12 +145,12 @@ Please share room availability and best direct tariff. Thank you!`;
                 type="date"
                 value={checkIn}
                 onChange={(e) => setCheckIn(e.target.value)}
-                className="w-full bg-[#1E1815] border border-[#5A4030] focus:border-[#C9A86A] text-[#F7F3EA] px-2.5 py-2 text-xs rounded-sm focus:outline-none"
+                className="w-full bg-[#12110F] border border-[#D4AF37]/25 focus:border-[#D4AF37] text-[#F7F3EA] px-2.5 py-2 text-xs rounded-sm focus:outline-none"
               />
             </div>
 
             <div>
-              <label className="block text-[10px] uppercase tracking-wider text-[#C9A86A] mb-1 font-medium flex items-center space-x-1">
+              <label className="block text-[10px] uppercase tracking-wider text-[#D4AF37] mb-1 font-semibold flex items-center space-x-1">
                 <Calendar className="w-3 h-3" />
                 <span>Check-out</span>
               </label>
@@ -158,19 +158,19 @@ Please share room availability and best direct tariff. Thank you!`;
                 type="date"
                 value={checkOut}
                 onChange={(e) => setCheckOut(e.target.value)}
-                className="w-full bg-[#1E1815] border border-[#5A4030] focus:border-[#C9A86A] text-[#F7F3EA] px-2.5 py-2 text-xs rounded-sm focus:outline-none"
+                className="w-full bg-[#12110F] border border-[#D4AF37]/25 focus:border-[#D4AF37] text-[#F7F3EA] px-2.5 py-2 text-xs rounded-sm focus:outline-none"
               />
             </div>
 
             <div>
-              <label className="block text-[10px] uppercase tracking-wider text-[#C9A86A] mb-1 font-medium flex items-center space-x-1">
+              <label className="block text-[10px] uppercase tracking-wider text-[#D4AF37] mb-1 font-semibold flex items-center space-x-1">
                 <Users className="w-3 h-3" />
                 <span>Guests</span>
               </label>
               <select
                 value={guests}
                 onChange={(e) => setGuests(e.target.value)}
-                className="w-full bg-[#1E1815] border border-[#5A4030] focus:border-[#C9A86A] text-[#F7F3EA] px-2.5 py-2 text-xs rounded-sm focus:outline-none"
+                className="w-full bg-[#12110F] border border-[#D4AF37]/25 focus:border-[#D4AF37] text-[#F7F3EA] px-2.5 py-2 text-xs rounded-sm focus:outline-none cursor-pointer"
               >
                 <option value="1 Guest">1 Guest</option>
                 <option value="2 Guests">2 Guests</option>
@@ -182,7 +182,7 @@ Please share room availability and best direct tariff. Thank you!`;
           </div>
 
           <div>
-            <label className="block text-[11px] uppercase tracking-wider text-[#C9A86A] mb-1 font-medium flex items-center space-x-1">
+            <label className="block text-[11px] uppercase tracking-wider text-[#D4AF37] mb-1 font-semibold flex items-center space-x-1">
               <FileText className="w-3.5 h-3.5" />
               <span>Special Requests</span>
             </label>
@@ -191,12 +191,12 @@ Please share room availability and best direct tariff. Thank you!`;
               placeholder="E.g., early morning Vishnupad darshan, ground floor..."
               value={specialRequest}
               onChange={(e) => setSpecialRequest(e.target.value)}
-              className="w-full bg-[#1E1815] border border-[#5A4030] focus:border-[#C9A86A] text-[#F7F3EA] placeholder-[#8B7B6B] px-3.5 py-2 text-xs rounded-sm focus:outline-none"
+              className="w-full bg-[#12110F] border border-[#D4AF37]/25 focus:border-[#D4AF37] text-[#F7F3EA] placeholder-[#A7A49C]/50 px-3.5 py-2 text-xs rounded-sm focus:outline-none"
             />
           </div>
 
-          <div className="pt-2 text-[11px] text-[#8B7B6B] flex items-center space-x-2">
-            <CheckCircle2 className="w-3.5 h-3.5 text-[#C9A86A] shrink-0" />
+          <div className="pt-2 text-[11px] text-[#A7A49C] flex items-center space-x-2 font-sans">
+            <CheckCircle2 className="w-3.5 h-3.5 text-[#D4AF37] shrink-0" />
             <span>Sends your formatted inquiry to our WhatsApp reception desk (+91 70915 90500).</span>
           </div>
 
@@ -205,7 +205,7 @@ Please share room availability and best direct tariff. Thank you!`;
             <button
               type="submit"
               id="modal-submit-whatsapp-btn"
-              className="bg-[#25D366] hover:bg-[#20ba59] text-[#FFFFFF] text-xs font-semibold uppercase tracking-[0.16em] py-3 px-4 rounded-sm transition-colors flex items-center justify-center space-x-2 shadow-md"
+              className="bg-[#25D366] hover:bg-[#20ba59] text-[#FFFFFF] text-xs font-bold uppercase tracking-[0.16em] py-3.5 px-4 rounded-full transition-colors flex items-center justify-center space-x-2 shadow-md cursor-pointer"
             >
               <MessageCircle className="w-4 h-4" />
               <span>CONFIRM VIA WHATSAPP</span>
@@ -213,9 +213,9 @@ Please share room availability and best direct tariff. Thank you!`;
 
             <a
               href={HOTEL_INFO.phoneTel}
-              className="border border-[#C9A86A]/50 hover:border-[#C9A86A] text-[#F7F3EA] text-xs font-semibold uppercase tracking-[0.16em] py-3 px-4 rounded-sm transition-colors flex items-center justify-center space-x-2 text-center"
+              className="border border-[#D4AF37]/50 hover:border-[#D4AF37] hover:bg-[#D4AF37]/10 text-[#F7F3EA] text-xs font-semibold uppercase tracking-[0.16em] py-3.5 px-4 rounded-full transition-colors flex items-center justify-center space-x-2 text-center"
             >
-              <Phone className="w-4 h-4 text-[#C9A86A]" />
+              <Phone className="w-4 h-4 text-[#D4AF37]" />
               <span>CALL RECEPTION DIRECTLY</span>
             </a>
           </div>

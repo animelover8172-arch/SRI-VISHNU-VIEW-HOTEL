@@ -32,7 +32,7 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen bg-[#F7F3EA] text-[#211C18] flex flex-col selection:bg-[#C9A86A] selection:text-[#211C18]">
+    <div className="min-h-screen bg-[#080807] text-[#F7F3EA] flex flex-col selection:bg-[#D4AF37] selection:text-[#080807] overflow-x-hidden">
       {/* Floating Main Luxury Navigation */}
       <Navbar onOpenBooking={handleOpenBookingModal} />
 

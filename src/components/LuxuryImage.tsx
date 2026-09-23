@@ -22,7 +22,6 @@ export default function LuxuryImage({
   const [hasError, setHasError] = useState(false);
   const [hasTriedFallback, setHasTriedFallback] = useState(false);
 
-  // Update currentSrc if prop changes
   if (src !== currentSrc && !hasTriedFallback && !hasError) {
     setCurrentSrc(src);
   }
@@ -36,29 +35,26 @@ export default function LuxuryImage({
     }
   };
 
-  // High-reliability architectural backup in case network has issues
-  const fallbackBg = 'linear-gradient(135deg, #211C18 0%, #5A4030 100%)';
-
   return (
     <div
-      className={`relative overflow-hidden bg-[#211C18] ${aspectClass} ${className}`}
-      style={{ background: fallbackBg }}
+      className={`relative overflow-hidden bg-[#0D0D0B] ${aspectClass} ${className}`}
     >
+      {/* Loading skeleton shimmer with dark luxury tones */}
       {!isLoaded && !hasError && (
-        <div className="absolute inset-0 bg-[#211C18]/60 animate-pulse flex items-center justify-center">
-          <div className="w-8 h-8 rounded-full border border-[#C9A86A]/40 border-t-[#C9A86A] animate-spin" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#0D0D0B] via-[#1A1916] to-[#0D0D0B] animate-pulse flex items-center justify-center">
+          <div className="w-7 h-7 rounded-full border border-[#D4AF37]/30 border-t-[#D4AF37] animate-spin" />
         </div>
       )}
 
       {hasError ? (
-        <div className="absolute inset-0 flex flex-col items-center justify-center p-6 text-center bg-gradient-to-br from-[#211C18] to-[#5A4030] text-[#F7F3EA]">
-          <div className="w-12 h-12 rounded-full border border-[#C9A86A]/40 flex items-center justify-center mb-3">
-            <span className="font-serif text-[#C9A86A] text-xl">ॐ</span>
+        <div className="absolute inset-0 flex flex-col items-center justify-center p-6 text-center bg-gradient-to-b from-[#131210] to-[#080807] text-[#F7F3EA] border border-[#D4AF37]/20">
+          <div className="w-10 h-10 rounded-full border border-[#D4AF37]/40 flex items-center justify-center mb-2 bg-[#080807]">
+            <span className="font-serif text-[#D4AF37] text-base">ॐ</span>
           </div>
-          <span className="font-serif tracking-widest text-[#C9A86A] text-xs uppercase mb-1">
+          <span className="text-[10px] uppercase tracking-[0.25em] text-[#D4AF37] font-semibold mb-1">
             Sri Vishnu View Hotel
           </span>
-          <p className="text-[#D8C9B4] text-xs max-w-[200px] leading-relaxed">
+          <p className="text-[#A7A49C] text-xs max-w-[220px] leading-relaxed line-clamp-2">
             {alt}
           </p>
         </div>
